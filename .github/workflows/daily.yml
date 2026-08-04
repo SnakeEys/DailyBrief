@@ -230,6 +230,7 @@ jobs:
           LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
           REPORT_LOCALE: ${{ vars.REPORT_LOCALE || 'zh' }}
           REPORT_TZ: ${{ vars.REPORT_TZ }}
+          OUTPUT_MARKDOWN: 'true'
           WEB_MODE: 'true'
         run: npm run daily
 
@@ -244,3 +245,34 @@ jobs:
           publish_branch: gh-pages
           keep_files: false  # we restored everything above, so a clean publish is fine
           commit_message: 'daily: report for ${{ github.run_id }}'
+
+      - name: Push to WeChat via PushPlus
+        if: ${{ secrets.PUSHPLUS_TOKEN != '' }}
+        env:
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          REPORT_TZ: ${{ vars.REPORT_TZ || 'Asia/Shanghai' }}
+        run: |
+          TODAY=$(TZ="$REPORT_TZ" date +%F)
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          REPORT_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}/daily_reports/${TODAY}/${TODAY}.html"
+          MD_FILE="daily_reports/${TODAY}/${TODAY}.md"
+          if [ -f "$MD_FILE" ]; then
+            python3 - <<PYEOF
+import json, os, urllib.request
+content = open("$MD_FILE", encoding="utf-8").read()[:3000]
+payload = {"token": os.environ["PUSHPLUS_TOKEN"], "title": "今日行业日报 $TODAY",
+           "content": content, "template": "markdown"}
+req = urllib.request.Request("https://www.pushplus.plus/send",
+      data=json.dumps(payload).encode(), headers={"Content-Type":"application/json"})
+print(urllib.request.urlopen(req, timeout=15).read().decode())
+PYEOF
+          else
+            python3 - <<PYEOF
+import json, os, urllib.request
+payload = {"token": os.environ["PUSHPLUS_TOKEN"], "title": "今日行业日报 $TODAY",
+           "content": "点击查看今日日报：$REPORT_URL", "template": "txt"}
+req = urllib.request.Request("https://www.pushplus.plus/send",
+      data=json.dumps(payload).encode(), headers={"Content-Type":"application/json"})
+print(urllib.request.urlopen(req, timeout=15).read().decode())
+PYEOF
+          fi
