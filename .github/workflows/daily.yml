@@ -247,11 +247,11 @@ jobs:
           commit_message: 'daily: report for ${{ github.run_id }}'
 
       - name: Push to WeChat via PushPlus
-        if: ${{ secrets.PUSHPLUS_TOKEN != '' }}
         env:
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           REPORT_TZ: ${{ vars.REPORT_TZ || 'Asia/Shanghai' }}
         run: |
+          if [ -z "$PUSHPLUS_TOKEN" ]; then echo "PUSHPLUS_TOKEN 未配置，跳过推送"; exit 0; fi
           TODAY=$(TZ="$REPORT_TZ" date +%F)
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
           REPORT_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}/daily_reports/${TODAY}/${TODAY}.html"
