@@ -25,9 +25,9 @@ import {
  */
 const TEXTS_ZH = {
   siteTitle: "每日简报",
-  catTech: "技术动态",
-  catFinance: "财经要点",
-  catPolitics: "时政观察",
+  catTech: "行业动态",
+  catFinance: "行情要点",
+  catPolitics: "政策观察",
   catTrading: "市场行情",
   catCommunity: "社区讨论",
   subAiNews: "AI 媒体",

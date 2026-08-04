@@ -1,56 +1,67 @@
 [
   {
-    "id": "ftchinese-news",
-    "name": "FT中文网",
+    "id": "gn-houmarket",
+    "name": "汽车后市场",
     "type": "rss",
-    "url": "https://www.ftchinese.com/rss/news",
+    "url": "https://news.google.com/rss/search?q=%E6%B1%BD%E8%BD%A6%E5%90%8E%E5%B8%82%E5%9C%BA&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
     "subcategory": "news",
-    "useCurl": true,
+    "lang": "zh",
     "enabled": true,
     "locales": [
       "zh"
     ]
   },
   {
-    "id": "people-finance",
-    "name": "人民网财经",
+    "id": "gn-qipei",
+    "name": "汽配",
     "type": "rss",
-    "url": "http://www.people.com.cn/rss/finance.xml",
+    "url": "https://news.google.com/rss/search?q=%E6%B1%BD%E9%85%8D&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
     "subcategory": "news",
-    "useCurl": true,
+    "lang": "zh",
     "enabled": true,
     "locales": [
       "zh"
     ]
   },
   {
-    "id": "qbitai",
-    "name": "量子位",
+    "id": "gn-yongpin",
+    "name": "汽车用品",
     "type": "rss",
-    "url": "https://www.qbitai.com/feed",
-    "category": "tech",
-    "subcategory": "ai-news",
-    "useCurl": true,
+    "url": "https://news.google.com/rss/search?q=%E6%B1%BD%E8%BD%A6%E7%94%A8%E5%93%81&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ]
+  },
+  {
+    "id": "gn-xiaoliang",
+    "name": "汽车销量",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=%E6%B1%BD%E8%BD%A6%E9%94%80%E9%87%8F&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ]
+  },
+  {
+    "id": "gn-zhengce",
+    "name": "汽车新规",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=%E6%B1%BD%E8%BD%A6%20%E6%96%B0%E8%A7%84&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "politics",
     "lang": "zh",
     "enabled": true,
     "locales": [
       "zh"
     ],
-    "notes": "智能汽车/新能源/科技动态"
-  },
-  {
-    "id": "xinhua-politics",
-    "name": "新华网时政",
-    "type": "rss",
-    "url": "http://www.xinhuanet.com/politics/news_politics.xml",
-    "category": "politics",
-    "useCurl": true,
-    "enabled": true,
-    "locales": [
-      "zh"
-    ],
-    "notes": "政策动态"
+    "notes": "政策新规"
   }
 ]
