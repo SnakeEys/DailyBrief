@@ -63,5 +63,61 @@
       "zh"
     ],
     "notes": "政策新规"
+  },
+  {
+    "id": "gn-guteyi",
+    "name": "固特异脚垫",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=%E5%9B%BA%E7%89%B9%E5%BC%82%E8%84%9A%E5%9E%AB&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "同学主营品类（2026-08-05 M1 迭代）"
+  },
+  {
+    "id": "gn-3w",
+    "name": "3W脚垫",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=3W%E8%84%9A%E5%9E%AB&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "同学关注品类（2026-08-05 M1 迭代）"
+  },
+  {
+    "id": "gn-longmo",
+    "name": "龙膜",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=%E9%BE%99%E8%86%9C&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "同学关注品类（2026-08-05 M1 迭代）"
+  },
+  {
+    "id": "gn-xpel",
+    "name": "xpel膜",
+    "type": "rss",
+    "url": "https://news.google.com/rss/search?q=xpel%E8%86%9C&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+    "category": "finance",
+    "subcategory": "news",
+    "lang": "zh",
+    "enabled": true,
+    "locales": [
+      "zh"
+    ],
+    "notes": "同学关注品类（2026-08-05 M1 迭代）"
   }
 ]
