@@ -28,10 +28,13 @@ name: Daily Brief
 
 on:
   schedule:
-    # 每天北京时间 8/14/20 点出报（UTC 0/6/12），
-    # 由 gate 按 REPORT_HOUR（REPORT_TZ 时区）决定是否出报。
-    # 想改频率：改这里 + 同步改 REPORT_HOUR 变量（GitHub → Settings → Variables）。
-    - cron: '7 0,6,12 * * *'
+    # 探测频率：每 30 分钟一次（分钟 7 和 37）。GitHub Actions 会静默丢弃
+    # 约 30% 的 cron 触发，所以用高频探测 + gate 按 REPORT_HOUR 过滤，
+    # 保证 8/14/20 每个档位都不会因单次触发被丢弃而漏报。
+    # 实际出报只发生在 REPORT_HOUR 命中且本小时尚未出报时 → 每天恰好 3 次。
+    # 想改出报时间：只改 REPORT_HOUR 变量即可（GitHub → Settings → Variables），
+    # 不需要动 cron（它始终高频探测，由 gate 决定是否出报）。
+    - cron: '7,37 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -154,7 +157,31 @@ jobs:
             fi
           fi
 
+          # Per-hour dedup: GitHub cron now probes every 30 min, so two probes
+          # can land in the same REPORT_HOUR slot (e.g. 14:07 + 14:37). We want
+          # exactly ONE report per target hour. If today's report was already
+          # published within the current Beijing hour, skip the duplicate.
+          dedup_skip=false
           if [ "$hour_match" = "true" ] && [ "$day_match" = "true" ]; then
+            TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
+            LAST_COMMIT=$(curl -s \
+              -H "Authorization: Bearer ${GH_TOKEN}" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/commits?path=${TODAY}/${TODAY}.md&sha=gh-pages&per_page=1" \
+              | python3 -c "import sys,json; d=json.load(sys.stdin); print(d[0]['commit']['committer']['date'] if d else '')")
+            if [ -n "$LAST_COMMIT" ]; then
+              COMMIT_HOUR=$(TZ="$TZ_VAL" date -d "$LAST_COMMIT" +%-H 2>/dev/null || echo "")
+              echo "Dedup check: last report commit hour=$COMMIT_HOUR, now hour=$NOW_HOUR"
+              if [ "$COMMIT_HOUR" = "$NOW_HOUR" ]; then
+                dedup_skip=true
+              fi
+            fi
+          fi
+
+          if [ "$dedup_skip" = "true" ]; then
+            echo "✗ Same-hour report already published — skipping duplicate"
+            echo "should-run=false" >> "$GITHUB_OUTPUT"
+          elif [ "$hour_match" = "true" ] && [ "$day_match" = "true" ]; then
             echo "✓ Match — proceeding to build"
             echo "should-run=true" >> "$GITHUB_OUTPUT"
           elif [ "$catchup_match" = "true" ]; then
@@ -248,7 +275,7 @@ jobs:
           if [ -z "$PUSHPLUS_TOKEN" ]; then echo "PUSHPLUS_TOKEN 未配置，跳过推送"; exit 0; fi
           TODAY=$(TZ="$REPORT_TZ" date +%F)
           REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          REPORT_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}/daily_reports/${TODAY}/${TODAY}.html"
+          REPORT_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO_NAME}/${TODAY}/${TODAY}.html"
           MD_FILE="daily_reports/${TODAY}/${TODAY}.md"
           if [ -f "$MD_FILE" ]; then
             python3 -c "import json,os,urllib.request as u; d=json.dumps({'token':os.environ['PUSHPLUS_TOKEN'],'title':'今日行业日报 $TODAY','content':open('$MD_FILE',encoding='utf-8').read()[:3000],'template':'markdown'}); u.urlopen(u.Request('https://www.pushplus.plus/send',data=d.encode(),headers={'Content-Type':'application/json'}),timeout=15)"
