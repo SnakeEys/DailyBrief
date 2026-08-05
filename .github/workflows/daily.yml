@@ -28,10 +28,10 @@ name: Daily Brief
 
 on:
   schedule:
-    # 每 6 小时触发一次（UTC 0/6/12/18 = 北京时间 8/14/20/2），
+    # 每天北京时间 8/14/20 点出报（UTC 0/6/12），
     # 由 gate 按 REPORT_HOUR（REPORT_TZ 时区）决定是否出报。
     # 想改频率：改这里 + 同步改 REPORT_HOUR 变量（GitHub → Settings → Variables）。
-    - cron: '7 */6 * * *'
+    - cron: '7 0,6,12 * * *'
   workflow_dispatch:
 
 permissions:
