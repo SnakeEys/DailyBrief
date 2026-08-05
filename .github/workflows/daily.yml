@@ -28,16 +28,10 @@ name: Daily Brief
 
 on:
   schedule:
-    # Two hourly triggers (at :07 and :37) — GitHub Actions silently drops
-    # a non-trivial fraction of scheduled runs, sometimes whole stretches
-    # of 2-3 hours back-to-back. A single off-peak cron was not enough; we
-    # saw the BJ 08-10 stretch get fully swallowed multiple times. Two
-    # triggers per hour gives ~95% per-window coverage, and the gate's
-    # catchup branch handles the residual misses by allowing a build any
-    # time after `earliest REPORT_HOUR - 1` if today's report is still
-    # absent from gh-pages.
-    - cron: '7 * * * *'
-    - cron: '37 * * * *'
+    # 每 6 小时触发一次（UTC 0/6/12/18 = 北京时间 8/14/20/2），
+    # 由 gate 按 REPORT_HOUR（REPORT_TZ 时区）决定是否出报。
+    # 想改频率：改这里 + 同步改 REPORT_HOUR 变量（GitHub → Settings → Variables）。
+    - cron: '7 */6 * * *'
   workflow_dispatch:
 
 permissions:
