@@ -102,14 +102,17 @@ function selectRoundRobin(
   return out;
 }
 
-async function callOnce(userPayloadJson: string): Promise<DailyReport> {
+async function callOnce(
+  userPayloadJson: string,
+  retryHint?: string,
+): Promise<DailyReport> {
   // Claude Code CLI's built-in system prompt biases the model toward
   // conversational markdown output. Anchor the format expectation in the
   // user message (instruction recency wins) *and* explicitly demand every
   // schema field be populated — without this Sonnet has been observed to
   // emit a JSON shell with empty arrays to "satisfy" a JSON-only ask.
   const userPrompt =
-    REPORT_LOCALE === "en"
+    (REPORT_LOCALE === "en"
       ? [
           "**Output language: ENGLISH ONLY.** Every string value in the JSON — hero_headline, daily_overview, every brief's title/summary, editor_note, keywords — must be written entirely in English. No Chinese characters anywhere.",
           "",
@@ -149,7 +152,7 @@ async function callOnce(userPayloadJson: string): Promise<DailyReport> {
           "",
           "候选新闻（JSON 数组，共 " + userPayloadJson.length + " 字符）：",
           userPayloadJson,
-        ].join("\n");
+        ].join("\n")) + (retryHint ?? "");
   const { text } = await runLlm({
     systemPrompt: SYSTEM_PROMPT_DIGEST,
     userPrompt,
@@ -218,19 +221,38 @@ export async function generateDailyReport(
   }));
   const userPayloadJson = JSON.stringify(userPayload);
 
+  // Up to 3 attempts with backoff. DeepSeek intermittently returns empty
+  // content (JSON.parse → "Unexpected end of JSON input"); an immediate
+  // single retry lands inside the same transient window and fails too.
+  // Spacing attempts a few seconds apart usually clears it. From attempt 2
+  // on, prefix a corrective note so the model sees its own bad output as
+  // the thing to fix (mirrors trading-commentary's retry hint pattern).
+  const MAX_ATTEMPTS = 3;
+  const RETRY_HINT =
+    REPORT_LOCALE === "en"
+      ? `\n\n⚠️ Important: the previous attempt was invalid (empty or non-JSON output) and was rejected downstream, wasting quota. This attempt MUST return a single valid JSON object matching the schema — starts with {, ends with }, no markdown, no explanations.`
+      : `\n\n⚠️ 重要：上一次尝试输出无效（为空或不是合法 JSON），已被下游拒绝，浪费配额。本次必须返回符合 schema 的合法 JSON 对象——以 { 开头、以 } 结尾，不要 markdown、不要解释。`;
+
   let report: DailyReport;
-  try {
-    report = await callOnce(userPayloadJson);
-  } catch (firstErr) {
-    // One retry — claude CLI occasionally wraps in narration on the first
-    // pass but obeys when the same prompt is repeated.
-    console.warn(
-      `[pipeline] first claude CLI call failed, retrying: ${
-        firstErr instanceof Error ? firstErr.message : String(firstErr)
-      }`,
-    );
-    report = await callOnce(userPayloadJson);
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      report = await callOnce(userPayloadJson, attempt > 1 ? RETRY_HINT : undefined);
+      return { report, tokensUsed: 0 };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      if (attempt < MAX_ATTEMPTS) {
+        console.warn(
+          `[pipeline] digest attempt ${attempt}/${MAX_ATTEMPTS} failed, retrying in ${attempt * 10}s: ${msg}`,
+        );
+        await new Promise((r) => setTimeout(r, attempt * 10_000));
+      } else {
+        console.warn(
+          `[pipeline] digest all ${MAX_ATTEMPTS} attempts failed: ${msg}`,
+        );
+      }
+    }
   }
+  throw new Error(`digest failed after ${MAX_ATTEMPTS} attempts`);
 
   // Max subscription has no per-call token meter — we expose 0 for schema
   // compatibility; consumers should treat 0 as "metric not available".
