@@ -1,106 +1,136 @@
 {
-  "hero_headline": "自动驾驶国标落地，8月汽车新规密集生效",
-  "daily_overview": "今日简报聚焦汽车产业。政策与监管端，L3/L4自动驾驶强制国标出台，为高阶智驾划定安全基线；8月多项新规落地，电动汽车供电设备3C认证、电池更换费用、充电桩安装等细则同步更新。财经端呈现分化与机遇并存：广汽前7月销量超88万辆、出口增长130%，赛力斯7月销量同比降44.35%，福特美国销量下滑10.2%；中国汽配企业加速拓展中东非洲市场，汽车后市场在改装新规下迎来1600亿元新空间。此外，郑州一汽车用品商城火灾致2死2伤，敲响安全警钟。",
-  "tech_briefs": [],
+  "hero_headline": "汽车新规密集落地，车企销量分化加剧",
+  "daily_overview": "今日汽车行业消息密集。技术侧，L3/L4自动驾驶强制国标落地，电池更换与充电桩新规出台，新能源汽车使用成本有望下降。财经侧，广汽、福特、赛力斯等车企披露销量，业绩分化明显；中国汽配企业加快出海，汽车后市场被视为万亿级新动能。时政侧，8月多项新规施行，覆盖电动汽车供电设备3C认证与维修服务；改装新政明确合规边界。整体看，行业处在政策规范与市场扩张并行期。",
+  "tech_briefs": [
+    {
+      "title": "L3/L4自动驾驶强制国标落地",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10aHNQS0hBaUxDUGZ5cDJQRHFfajdFSzdBRUU2X1M3WkFZcG1Ib0NWdlVjR21Zd0xjM1V6T2RzaVRIOW5EN2JFVk81c2Nxbm5WQWJqZXJ3WTdoc3M?oc=5",
+      "source": "汽车新规",
+      "summary": "我国发布L3/L4级自动驾驶强制国标，明确系统安全与准入要求，为自动驾驶提供专属安全硬规则。",
+      "importance": 9
+    },
+    {
+      "title": "新能源车电池更换新规出台",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE51WmZPR2Y4Z3I0VjRwQ3Q0M1RpYkJEOXpMV25kMnp1NjlrSXJqTlRWa3hxNDNIVGhBSXp0dk9PMGVKY2c2U1RRVnA0aEUxc0tHMUdPT2NfZ3EybW4zZHRZRmlBLTg3Wkhhai1oQVc1TmNUZw?oc=5",
+      "source": "汽车新规",
+      "summary": "新能源汽车电池更换新规出台，聚焦更换费用过高问题，相关细则覆盖质保与维修环节，有分析称换电成本有望降低80%（多家报道）。",
+      "importance": 8
+    },
+    {
+      "title": "充电桩新规落地，小区安装破冰",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Yd2xiZ0dkdjFiczZMY1FDcEloRlE1WDA0SWFDVmZjaFRITEdjNkpqUHV0RGtQMzc1YnBjUG5EWFhtaC1mdWJOT2tLbURfak9XZ2pBcnNHdGRnU3lJ?oc=5",
+      "source": "汽车新规",
+      "summary": "充电桩新规发布，要求完善小区充电设施建设与电力配套，强化物业配合义务，家庭充电桩安装流程将简化（多家报道）。",
+      "importance": 8
+    },
+    {
+      "title": "汽车新规要求标配实体按键",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0yWEJmNzUySjBSYW1lS2lnOVlOaURFNXNrRnl4UGd2TlBmNUhMYzVXczZLMjV2V1hvZGM4a0RjWlFMRVN1M1ZsaGxZbXpVWlZKcHNFdWV4YkdnZV83Q1F4YUluazkzcXpjWTVONVdjbmlaWG9NenhiVmhn?oc=5",
+      "source": "汽车新规",
+      "summary": "汽车新规要求多项功能必须配备实体按键，涉及人机交互与行车安全，规定将于2027年正式生效。",
+      "importance": 7
+    }
+  ],
   "finance_briefs": [
     {
-      "title": "车企销量走势分化：广汽增长，赛力斯、福特下滑",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE8xMFJCX0tVVThSaEFqZ2tLZ0d6NTV3djhhbTNXY1dTRGQzcW9PZU5FclNxdHJUUnhSM3pDZ0VxWVAyNFJ1T19WUVZUZGE?oc=5",
+      "title": "广汽前7月销量超88万辆，出口增130%",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQSXhQdVdTR0JHWVFZVmtaTl93MXNtSUh1N0JjdlF5YnZPOTJBUDFuOTctZWR5WUxUUW9LY25tZDlKMFQ1dExwLUxiT0huMzYzcjlHdmNObkxTTDU2clgyTUFqOHByZ1RFOE5XOURvVjRCVTNPRXZZSjhhTGlWclVwQUZmTEZSSXoxYnc?oc=5",
       "source": "汽车销量",
-      "summary": "广汽集团1-7月销量超88万辆，新能源31.17万辆，出口同比增130%；赛力斯7月整车销量同比降44.35%，福特美国销量降10.2%。（多家报道）",
+      "summary": "广汽集团前7月销量超88万辆，其中新能源车31.17万辆，出口同比增长130%（多家报道）。",
       "importance": 8
     },
     {
-      "title": "中国汽配企业加速拓展中东非洲市场",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE0weXkySDI5VUtnclVNX2hSVVJKVFltUDlDRURIS1Q4SzRkakxyc2dtZjhPSHJPakZHZXZCWEFHU1g2bWI0aklzdVVzTXZWMUJxekpKUk5JUWw?oc=5",
+      "title": "福特7月美国销量下滑10.2%",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQRXY4VDVxQUxvMHNVdFM2WWRpVmN6a0tvUktkdERCUjFTRTdBNTdfOU1QQlZaNjNaSUxGeEUydHRyWUtnczdCRWQ2Y3FCOTJXekVheDltUklNX3c4Q0hFVHdtNjFpWVp4eVlWRFdpQVZyUHlybEVqUkI3c1VKSEt2eTZfQVFsYlE?oc=5",
+      "source": "汽车销量",
+      "summary": "福特7月美国销量同比下滑10.2%，公司仍称当月表现不错。",
+      "importance": 7
+    },
+    {
+      "title": "赛力斯7月整车销量降44.35%",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPQ1d6Y1hUa0FyQUZrQmpxN0Vpc05IdVljNkNON2VjM2FwanlGTDhKZ0hvXy12Y2RnaTV5RlprTlhjT2FSNTBNQ1loZ0JDZDZvVmhUY0JSS1NBb21wVVdQMVdxSFFBSWlWaGctSnVldThrUnhQVG5WamVrT2lKT25WX3BfLWI3eHl0Y1lSRDdjYjU4LUZm?oc=5",
+      "source": "汽车销量",
+      "summary": "赛力斯7月整车销量同比下降44.35%，公司发布公告提示经营数据。",
+      "importance": 7
+    },
+    {
+      "title": "中国汽配企业加快拓展中东非洲",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5qMG5Pemh2bjQwdmNKQTRuQnp0LUJaenBBQlpNenh3eHg4bmlJeHlIZlVSeHhGcWRUVS01NUVoOWFtMXo3eE1xbUN0cHQ2MUFSOGZvX1I1RTY1NHE2U0FvM0JYRXFjSnB4M3ZobEZSODlXa1hJUkk4bVZWZV83Vms?oc=5",
       "source": "汽配",
-      "summary": "第五届阿联酋中国轮胎汽配展在沙迦开幕，山东汽车产业集群组团参展；多家中国汽配企业加快布局中东及非洲市场。（多家报道）",
+      "summary": "第五届阿联酋中国轮胎汽配展在沙迦开幕，山东汽车产业集群组团参展；多家中国汽配企业加速开拓中东及非洲市场（多家报道）。",
       "importance": 7
     },
     {
-      "title": "汽车改装新政落地 后市场迎1600亿新规",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5IOGxaUjBISEhRZnhxUlhDUVZ4UVVtZlltQ1FnSUlKWnBlNHJvQ3g3OXBsN2xUbkM1dFV1OTQ2UDVOdWJHRlVCWVhKRnU1akdSSjhaVkVYUnJ4WGs?oc=5",
+      "title": "汽车后市场迎万亿级发展机遇",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPUE1kZllaYW9FYVg0TTQwT3dXbDNtUWpiQnhpalljbEJhcUdndDVVbTlvTHpjMlJMaUdKZVdsVG03U0puTDg1cEdmZ0tNMG4wWk1DTWM4NW8wV0xhZHJZSGNOM3dUMWpwWEJKSEdkNXdfWDhCM1FDQnhUMnJ2TGxIck1xaVZ6QXZPc3lpWQ?oc=5",
       "source": "汽车后市场",
-      "summary": "汽车改装新政落地，1600亿元市场迎来新规；机构呼吁激活万亿级汽车后市场消费动能，构建“车生态”。（多家报道）",
-      "importance": 7
-    },
-    {
-      "title": "郑州汽车用品商城起火致2死2伤",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNT3pwbUhTUUw5bnRYQzRnTjB3bXYtMGJsVWVZZkJQM1AyZlEtM1MyZVJVWlJuNFpCV1doNWRvSGlHLXVObTZfcXRHNlItZTFTZGphZVZzak1PNnRfQTdDWnNWNFZ2VDdUZnF2cXVsOEx2X1lhdkJReTFkcDdfYnI4RF9WcVRqLVNNWTVPT0V0WmF0MEdHY0RzMFh6c2VDQW5pTFBVUURNWHVkR2Rza2c4NV8zaUd0NjVKMFlOTDFPc2ljT1BjNjdFVmZJTEpWakctVTBTNUctUExuNUF1aFZPX2c1dHRTdDQ?oc=5",
-      "source": "汽车用品",
-      "summary": "郑州一家汽车用品商城发生火灾，造成2人死亡、2人受伤，具体原因仍在调查中。",
-      "importance": 8
+      "summary": "机构与分析认为，汽车后市场有望激活万亿级消费动能，业界提出构建“车生态”新范式，覆盖维修、改装、用品等环节（多家报道）。",
+      "importance": 6
     }
   ],
   "politics_briefs": [
     {
-      "title": "L3/L4自动驾驶强制国标发布",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE10aHNQS0hBaUxDUGZ5cDJQRHFfajdFSzdBRUU2X1M3WkFZcG1Ib0NWdlVjR21Zd0xjM1V6T2RzaVRIOW5EN2JFVk81c2Nxbm5WQWJqZXJ3WTdoc3M?oc=5",
-      "source": "汽车新规",
-      "summary": "L3/L4自动驾驶强制国标出台，明确自动驾驶专属安全要求和硬性规则，为高阶自动驾驶提供统一标准。",
-      "importance": 9
-    },
-    {
-      "title": "8月多项新规实施，涉电动汽车与维修",
+      "title": "8月多项新规落地实施",
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE1UMGd5WlBMelhsY3lsMWlZZU1ibUlzS0VoMjBaeElTMjN1dkdlVHdJNDJKUmlROUxBUWYtVkhyQmNfWFpvcy1BdFRTb0N2cTFZeE9LUWhYbkltdS1JSEVWTTZvdw?oc=5",
       "source": "汽车新规",
-      "summary": "8月起多项新规落地，包括电动汽车供电设备3C认证、新能源汽车维修、个人贷款、快递外卖等新要求。（多家报道）",
-      "importance": 7
+      "summary": "8月起一批新规施行，涉及个人贷款、电动汽车供电设备3C认证、新能源汽车维修、快递外卖、飞行学员选拔等事项（多家报道）。",
+      "importance": 8
     },
     {
-      "title": "新能源汽车换电池、充电桩新规出台",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1ZUGxhek9ITDkxSjYxbm4zV05IRjJTbHVBZk5KbG9YYi0zYzdveFppUXhuQjlnQi1hSUlCc2djRDhQMm1tNUw4b1Q1WDR4VmlxTFVDNk9xNVdhSTZ1V0x1UnVmT09BV3d4bGpVVTJYV0xpdw?oc=5",
+      "title": "汽车改装新规落地，明确合法边界",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5IOGxaUjBISEhRZnhxUlhDUVZ4UVVtZlltQ1FnSUlKWnBlNHJvQ3g3OXBsN2xUbkM1dFV1OTQ2UDVOdWJHRlVCWVhKRnU1akdSSjhaVkVYUnJ4WGs?oc=5",
+      "source": "汽车后市场",
+      "summary": "汽车改装新政落地，1600亿元市场迎新规，明确可改范围与年检禁区，车主改装需依法合规（多家报道）。",
+      "importance": 8
+    },
+    {
+      "title": "匈牙利要求混动车限期换白牌",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOLVowNFZNUDZpaDA5M2tVRk1pUW0tX2ppN1VaRW5jVW5lRWw1Y2I2NHF5WjV5YnNocE5faEdPSktseFFfYW1FUXZCUWtXY2w3N1BCVjZJX1dpSmlSTnVEWE1remJTLW81T1FvaWgyWXhJRkxhLTNwdlNEQlZ1Njc3X3FMSWxldmRRRUE?oc=5",
       "source": "汽车新规",
-      "summary": "2026年新能源车电池更换费用有望大幅降低，充电桩安装新规明确物业不得无理阻挠，小区配套将提速。（多家报道）",
-      "importance": 7
+      "summary": "匈牙利规定混合动力汽车须限期将绿色车牌更换为白色，逾期禁止上路。",
+      "importance": 6
     }
   ],
-  "editor_note": "汽车产业进入政策与市场共振期：自动驾驶国标与多项新规落地，销量分化与出海提速并存。后续重点在执行细节与消费者获得感。",
+  "editor_note": "汽车行业当日信息密集：新规频频落地，销量数据分化。改装与自动驾驶监管趋严，企业出海提速，市场规范化仍是主线。",
   "keywords": [
     "自动驾驶国标",
-    "8月新规",
-    "新能源汽车",
-    "汽车销量分化",
+    "汽车新规",
+    "新能源车销量",
     "汽配出海",
     "汽车后市场",
     "充电桩",
-    "安全警钟"
+    "改装新规",
+    "车企分化"
   ],
   "trading": {
-    "market_overview": "整体技术状态看，美股主要指数偏强：SPY 距 52 周高点仅 -0.27%，RSI 66，MACD 金叉且多头排列；QQQ 单日上涨 3.40%，MACD 金叉；MSFT 5 日累计大涨 25.29%，RSI 升至 79 超买区。但美股内部分化明显，AAPL 5 日跌 -9.03% 且 MACD 死叉，TSLA 与 META 均处于空头排列。加密市场在恐慌贪婪指数 25（极度恐慌）的背景下整体承压，总市值约 2.27 万亿美元，BTC-USD 与 ETH-USD 的 RSI 均在 51 附近，价格受制于 SMA200，SOL-USD 更呈空头排列。中概股短期反弹显著：BABA 与 JD 的 RSI 分别达 70.9 和 78.4 进入超买，0700.HK 出现 MACD 金叉，但多数标的仍低于 SMA200，属于超跌反弹结构。商品与外汇分化：黄金期货单日涨 2.25% 但趋势仍空头排列；WTI 原油单日大跌 -6.45% 且 MACD 死叉；美元兑人民币 RSI 28.6 超卖并接近 52 周低；美元指数 RSI 37.2，表现偏弱。10Y 美债收益率则多头排列并接近 52 周高点。",
+    "market_overview": "美股整体技术面偏强：SPY 现价位于 20/50/200 日均线上方，距 52 周高点仅 -0.27%，MACD 金叉；QQQ 单日涨 3.40%、5 日涨 7.16%，亦维持多头排列。但个股分化明显，MSFT RSI 79 超买，AAPL MACD 死叉，TSLA 空头排列且 RSI 39.2 偏弱。加密市场在恐慌贪婪指数 27（恐慌）背景下震荡：总市值 2.27 万亿美元、24 小时涨幅 0.79%，BTC 主导率 56.6%、ETH 占比 9.9%；BTC RSI 50.1 中性，价格位于 20 日均线（64326.13）下方和 50 日均线（63259.74）上方，MACD 动能偏弱；SOL 维持空头排列。中概股反弹显著，BABA 5 日涨 11.98%、RSI 70.9 超买，JD RSI 78.4 超买，腾讯 0700.HK MACD 金叉。商品外汇分化：WTI 原油单日跌 6.36%、MACD 死叉；黄金涨 2.36% 但仍低于 50/200 日均线；美元/人民币 RSI 28.6 超卖且接近 52 周低，美元指数 RSI 37 偏弱。VIX 报 16.5，5 日跌 9.39%；10Y 美债收益率 4.63% 维持多头排列。",
     "watchlist": [
       {
         "symbol": "SPY",
-        "display_name": "标普 500 ETF (SPY)",
+        "display_name": "标普500 ETF (SPY)",
         "stance": "偏上行",
-        "rationale": "SPY 现价 771.33，位于 SMA20（747.20）与 SMA50（745.89）上方，均线呈多头排列，距 52 周高点仅 -0.27%。RSI14 为 66，处于偏强区间；MACD 快线 2.56 上穿信号线 0.55，柱线为正，形成金叉。近 1 日上涨 1.80%，近 5 日上涨 4.11%，短线动量向上，技术状态偏上行。"
+        "rationale": "现价 771.33 美元，高于 SMA20（747.20）、SMA50（745.89）和 SMA200（701.39），呈多头排列；RSI 66 处于正常偏强区间；MACD 2.5588 高于信号线 0.5535，构成金叉；1 日涨幅 1.80%，距 52 周高点仅 -0.27%。技术状态整体偏上行。"
       },
       {
-        "symbol": "BABA",
-        "display_name": "阿里巴巴 (BABA)",
+        "symbol": "QQQ",
+        "display_name": "纳斯达克100 ETF (QQQ)",
         "stance": "偏上行",
-        "rationale": "阿里巴巴现价 128.99，近 5 日上涨 11.98%，短期反弹强劲。价格站上 SMA20（116.42）与 SMA50（113.88），但受制于 SMA200（140.70）。RSI14 为 70.9，进入超买区；MACD 快线 3.34 高于信号线 1.65，柱线为正，短期动量偏强。综合看当前技术状态偏上行，但需留意超买回调压力与中期均线压制。"
+        "rationale": "现价 723.85 美元，高于 SMA20（700.60）、SMA50（715.01）和 SMA200（646.15），均线结构偏多；1 日上涨 3.40%、5 日上涨 7.16%，动量明显；RSI 58 处于正常区间；MACD -5.2138 高于信号线 -7.1808，处于金叉后的修复阶段；距 52 周高点 -3.31%。技术状态偏上行。"
       },
       {
         "symbol": "TSLA",
         "display_name": "特斯拉 (TSLA)",
         "stance": "偏下行",
-        "rationale": "特斯拉现价 327.35，低于 SMA20（355.27）、SMA50（387.05）和 SMA200（410.52），均线呈空头排列。MACD 快线 -23.22 低于信号线 -20.63，绿柱延续；RSI14 为 39.2，处于弱势区。虽然近 1 日反弹 1.64%、近 5 日涨 6.48%，但尚未扭转空头结构，技术状态偏下行。"
-      },
-      {
-        "symbol": "CL=F",
-        "display_name": "WTI 原油期货 (CL=F)",
-        "stance": "偏下行",
-        "rationale": "WTI 原油现价 75.16，单日下跌 -6.45%，近 5 日累计 -5.17%，短线动能明显转弱。价格已跌破 SMA20（81.10）、SMA50（81.43）及 SMA200（75.99），均线结构偏空。MACD 快线 0.44 低于信号线 0.80，形成死叉；RSI14 为 41.9，运行于弱势区间。整体技术状态偏下行。"
+        "rationale": "现价 327.35 美元，低于 SMA20（355.27）、SMA50（387.05）和 SMA200（410.52），呈空头排列；RSI 39.2 接近偏弱区间；MACD -23.2194 低于信号线 -20.626，动能仍偏空。虽然 1 日上涨 1.64%、5 日反弹 6.48%，但均线结构尚未修复。技术状态偏下行。"
       },
       {
         "symbol": "BTC-USD",
         "display_name": "比特币 (BTC-USD)",
         "stance": "中性",
-        "rationale": "比特币现价 64140.79，RSI14 为 50.9，接近多空平衡位。价格略低于 SMA20（64334.90），高于 SMA50（63263.24），但距 SMA200（70807.81）仍有距离。MACD 快线 -85.62 低于信号线 44.22，柱线为负，中期动量偏弱；近 1 日涨 1.07%，信号混杂。结合恐慌贪婪指数 25 极度恐慌，当前技术状态为中性。"
+        "rationale": "现价 63965.39 美元，RSI 50.1 贴近中性；价格位于 SMA50（63259.74）之上，但低于 SMA20（64326.13）和 SMA200（70806.93），均线结构不明确；MACD -99.6126 低于信号线 41.4228，动能偏弱；5 日下跌 1.17%。整体技术状态中性。"
       }
     ],
-    "risk_caveat": "本报告仅为技术指标解读，不构成投资建议。技术指标基于历史行情计算，存在滞后性，过去走势不代表未来表现。市场受情绪、政策、流动性等多重因素影响，实际走势可能与指标状态不符。仅供技术指标解读参考，请独立判断并审慎决策。",
+    "risk_caveat": "本报告内容基于历史行情数据计算的技术指标，仅反映当前技术面状态。过去走势不代表未来表现，技术指标存在滞后性，本报告仅供技术指标解读参考，不构成任何投资建议。",
     "tickers": [
       {
         "symbol": "SPY",
@@ -349,18 +379,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 64140.79,
-        "pct1Day": 1.0713550851625553,
-        "pct5Day": -0.9030757928382306,
-        "pct52WeekHigh": -49.17450797781615,
-        "pct52WeekLow": 11.07059968345788,
-        "sma20": 64334.9005859375,
-        "sma50": 63263.2446875,
-        "sma200": 70807.80623046875,
-        "rsi14": 50.924731231682806,
-        "macd": -85.62069143966073,
-        "macdSignal": 44.22114629658476,
-        "macdHistogram": -129.8418377362455,
+        "currentPrice": 63965.39,
+        "pct1Day": 0.794964418911989,
+        "pct5Day": -1.1740671620735692,
+        "pct52WeekHigh": -49.31349584030881,
+        "pct52WeekLow": 10.766864990067313,
+        "sma20": 64326.1306640625,
+        "sma50": 63259.73671875,
+        "sma200": 70806.92923828126,
+        "rsi14": 50.06258273206337,
+        "macd": -99.6125895889927,
+        "macdSignal": 41.42276666521004,
+        "macdHistogram": -141.03535625420275,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -371,18 +401,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 1867.69,
-        "pct1Day": 0.5076549134698115,
-        "pct5Day": -2.591197787449115,
-        "pct52WeekHigh": -62.29732203976274,
-        "pct52WeekLow": 23.974970688793288,
-        "sma20": 1885.7655822753907,
-        "sma50": 1784.829560546875,
-        "sma200": 2080.779763183594,
-        "rsi14": 51.31864406967877,
-        "macd": 18.57361300471848,
-        "macdSignal": 28.676587386868807,
-        "macdHistogram": -10.102974382150325,
+        "currentPrice": 1866.95,
+        "pct1Day": 0.4678326385548264,
+        "pct5Day": -2.629792261712664,
+        "pct52WeekHigh": -62.31226026917479,
+        "pct52WeekLow": 23.925850396716065,
+        "sma20": 1885.728582763672,
+        "sma50": 1784.8147607421874,
+        "sma200": 2080.776063232422,
+        "rsi14": 51.23418183703961,
+        "macd": 18.51458244460855,
+        "macdSignal": 28.664781274716233,
+        "macdHistogram": -10.150198830107684,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": []
@@ -393,18 +423,18 @@
         "group": "crypto",
         "currency": "USD",
         "exchangeName": "CCC",
-        "currentPrice": 73.76,
-        "pct1Day": 0.3896612218980802,
-        "pct5Day": -0.950747028636347,
-        "pct52WeekHigh": -70.87001732554691,
-        "pct52WeekLow": 22.089451047691693,
-        "sma20": 74.89608192443848,
-        "sma50": 75.01542434692382,
-        "sma200": 85.01319808959961,
-        "rsi14": 46.19601370806604,
-        "macd": -0.7928062921811971,
-        "macdSignal": -0.5734971632423489,
-        "macdHistogram": -0.21930912893884824,
+        "currentPrice": 73.6,
+        "pct1Day": 0.17189623009351435,
+        "pct5Day": -1.1656044103529855,
+        "pct52WeekHigh": -70.93320600813792,
+        "pct52WeekLow": 21.824614928282365,
+        "sma20": 74.88808174133301,
+        "sma50": 75.01222427368164,
+        "sma200": 85.01239807128906,
+        "rsi14": 45.632112562801474,
+        "macd": -0.8055701170796681,
+        "macdSignal": -0.5760499282231439,
+        "macdHistogram": -0.22952018885652414,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -524,18 +554,18 @@
         "group": "commodity-fx",
         "currency": "USD",
         "exchangeName": "CMX",
-        "currentPrice": 4124.3,
-        "pct1Day": 2.246078040628777,
-        "pct5Day": 2.180213316832691,
-        "pct52WeekHigh": -26.16984712326805,
-        "pct52WeekLow": 24.597444185976265,
-        "sma20": 4060.060021972656,
-        "sma50": 4182.660009765625,
-        "sma200": 4478.705988769531,
-        "rsi14": 51.94167112634083,
-        "macd": -28.243214216056913,
-        "macdSignal": -43.371573068983466,
-        "macdHistogram": 15.128358852926553,
+        "currentPrice": 4128.9,
+        "pct1Day": 2.360117261584293,
+        "pct5Day": 2.294179076175458,
+        "pct52WeekHigh": -26.087501342594255,
+        "pct52WeekLow": 24.736412797196454,
+        "sma20": 4060.2900268554686,
+        "sma50": 4182.75201171875,
+        "sma200": 4478.728989257813,
+        "rsi14": 52.26913429762256,
+        "macd": -27.87625485886292,
+        "macdSignal": -43.29818119754467,
+        "macdHistogram": 15.42192633868175,
         "trend": "bearish",
         "rsiState": "normal",
         "signals": [
@@ -551,18 +581,18 @@
         "group": "commodity-fx",
         "currency": "USD",
         "exchangeName": "NYM",
-        "currentPrice": 75.16,
-        "pct1Day": -6.447593445367877,
-        "pct5Day": -5.172851407679087,
-        "pct52WeekHigh": -37.094074322062276,
-        "pct52WeekLow": 36.704256093124776,
-        "sma20": 81.10449981689453,
-        "sma50": 81.42760009765625,
-        "sma200": 75.986699924469,
-        "rsi14": 41.930366654135966,
-        "macd": 0.4397732375554142,
-        "macdSignal": 0.8042202856861882,
-        "macdHistogram": -0.364447048130774,
+        "currentPrice": 75.23,
+        "pct1Day": -6.360463742616082,
+        "pct5Day": -5.084534478441951,
+        "pct52WeekHigh": -37.03548711081353,
+        "pct52WeekLow": 36.831575118224826,
+        "sma20": 81.10799980163574,
+        "sma50": 81.42900009155274,
+        "sma200": 75.98704992294311,
+        "rsi14": 42.004330413877696,
+        "macd": 0.4453572587949566,
+        "macdSignal": 0.8053370899340967,
+        "macdHistogram": -0.3599798311391401,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": [
@@ -677,18 +707,18 @@
         "group": "macro",
         "currency": "USD",
         "exchangeName": "NYB",
-        "currentPrice": 99.882,
-        "pct1Day": -0.07803029730596234,
-        "pct5Day": -1.4776063266932666,
-        "pct52WeekHigh": -1.884086444007851,
-        "pct52WeekLow": 4.533751962323399,
-        "sma20": 100.83560104370117,
-        "sma50": 100.45544036865235,
-        "sma200": 99.14716022491456,
-        "rsi14": 37.24076526536888,
-        "macd": -0.11647645529929207,
-        "macdSignal": 0.08417022887414896,
-        "macdHistogram": -0.20064668417344103,
+        "currentPrice": 99.864,
+        "pct1Day": -0.09603750035204232,
+        "pct5Day": -1.4953613084329151,
+        "pct52WeekHigh": -1.9017681728880087,
+        "pct52WeekLow": 4.514913657770808,
+        "sma20": 100.83470077514649,
+        "sma50": 100.45508026123046,
+        "sma200": 99.14707019805908,
+        "rsi14": 37.034923536741516,
+        "macd": -0.11791278119849835,
+        "macdSignal": 0.0838829636943077,
+        "macdHistogram": -0.20179574489280605,
         "trend": "neutral",
         "rsiState": "normal",
         "signals": [
@@ -700,19 +730,19 @@
       }
     ],
     "crypto_fear_greed": {
-      "value": 25,
-      "classification": "Extreme Fear",
-      "classificationCn": "极度恐慌",
-      "timestamp": "2026-08-04T00:00:00.000Z"
+      "value": 27,
+      "classification": "Fear",
+      "classificationCn": "恐慌",
+      "timestamp": "2026-08-05T00:00:00.000Z"
     },
     "crypto_global": {
-      "totalMarketCapUsd": 2274439197672.0273,
-      "total24hVolumeUsd": 53558471620.21982,
-      "marketCapChangePct24h": 0.6882870675255621,
-      "btcDominance": 56.57705861281168,
-      "ethDominance": 9.91475977048111,
+      "totalMarketCapUsd": 2272079604126.38,
+      "total24hVolumeUsd": 53772043496.62085,
+      "marketCapChangePct24h": 0.7944138395598956,
+      "btcDominance": 56.561207553656324,
+      "ethDominance": 9.922136529969597,
       "activeCryptocurrencies": 18118
     },
-    "generated_at": "2026-08-04T23:37:04.374Z"
+    "generated_at": "2026-08-05T00:10:40.203Z"
   }
 }
