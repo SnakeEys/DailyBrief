@@ -133,13 +133,13 @@ jobs:
                 earliest_hour=$h_trim
               fi
             done
-            # Tolerate 1h early: if BJ 07:XX is the only trigger before BJ
-            # 08:00 gets swallowed, we'd rather fire slightly early than
-            # not at all. earliest_hour=0 edge case: don't go negative.
+            # Fire catchup only once we're AT or past the earliest report
+            # hour. No "1h early" tolerance: with an 8/14/20 schedule a
+            # 07:XX probe firing catchup produced a premature report, and
+            # then the normal 08:00 slot built a second one — two pushes/day.
+            # The 30-min probes inside the target hour are the real safety
+            # net; catchup now only recovers when those were all swallowed.
             catchup_threshold=$earliest_hour
-            if [ "$earliest_hour" -gt 0 ]; then
-              catchup_threshold=$((earliest_hour - 1))
-            fi
             if [ "$NOW_HOUR" -ge "$catchup_threshold" ]; then
               TODAY=$(TZ="$TZ_VAL" date +%Y-%m-%d)
               CHECK_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/contents/${TODAY}/${TODAY}.html?ref=gh-pages"

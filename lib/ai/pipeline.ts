@@ -2,7 +2,7 @@ import { jsonrepair } from "jsonrepair";
 import { runLlm } from "./llm";
 import { extractJson } from "./json-util";
 import { SYSTEM_PROMPT_DIGEST_EN, SYSTEM_PROMPT_DIGEST_ZH } from "./prompts";
-import { REPORT_LOCALE } from "../sources/registry";
+import { sources, REPORT_LOCALE } from "../sources/registry";
 import type { Category, RawArticle } from "../sources/types";
 
 const SYSTEM_PROMPT_DIGEST =
@@ -49,6 +49,22 @@ const PER_CATEGORY_LIMIT: Record<Category, number> = {
   finance: 20,
   politics: 15,
 };
+
+/**
+ * Sources in these subcategories carry the reader's own product categories
+ * (e.g. 固特异脚垫 / 3W脚垫 / 龙膜 / xpel膜). The digest MUST surface them
+ * even when their articles are older / more niche than macro finance news —
+ * that's the part of the report the reader actually cares about. Payload
+ * items from these sources get `priority: true` so the LLM can see it.
+ */
+const PRIORITY_SUBCATEGORIES = new Set(["brands"]);
+const prioritySourceIds = new Set(
+  sources
+    .filter(
+      (s) => s.enabled !== false && PRIORITY_SUBCATEGORIES.has(s.subcategory ?? ""),
+    )
+    .map((s) => s.id),
+);
 
 const MAX_AGE_DAYS = 14;
 
@@ -127,6 +143,8 @@ async function callOnce(
           "  - editor_note: 30-60 word editor's note",
           "  - keywords: 5-8 keywords",
           "",
+          "⚠️ Special requirement: candidate items marked priority=true are the reader's own product-category news — finance_briefs MUST include at least 1 of them, even when they are less timely than other candidates.",
+          "",
           "BriefItem fields: title, url (copied verbatim from candidate), source, summary, importance (1-10).",
           "**Quote rule (important!)**: For any quotation INSIDE a JSON string, use single quotes ' or curly quotes '\" — **never** raw double quotes \", which break JSON parsing.",
           "No trailing commas.",
@@ -145,6 +163,8 @@ async function callOnce(
           "  - politics_briefs: **2-3 条** 时政 BriefItem",
           "  - editor_note: 30-60 字的编辑短评",
           "  - keywords: 5-8 个关键词",
+          "",
+          "⚠️ 特殊要求：候选条目中标 priority=true 的是读者主营/关注的品类新闻（脚垫、窗膜、车衣等品牌），finance_briefs 中**必须至少包含 1 条**，即使其时效性弱于其它候选也要保留。",
           "",
           "BriefItem 字段：title、url（必须从候选条目原样选取）、source、summary、importance(1-10)。",
           "**引号规则（重要！）**：JSON 字符串内的中文引用请使用**中文全角引号**「」或者 “”，**绝对不要**用英文双引号 \" —— 那会导致 JSON 解析失败。例：写 商务部回应「内卷」 而不是 商务部回应\"内卷\"。",
@@ -218,6 +238,7 @@ export async function generateDailyReport(
     category: a.category,
     excerpt: (a.excerpt ?? "").slice(0, 200),
     published: a.publishedAt?.toISOString() ?? "",
+    priority: prioritySourceIds.has(a.sourceId),
   }));
   const userPayloadJson = JSON.stringify(userPayload);
 

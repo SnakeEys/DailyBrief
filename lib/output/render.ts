@@ -37,6 +37,7 @@ const TEXTS_ZH = {
   subCnCommunity: "中文社区",
   subOverseasCommunity: "海外社区",
   subFinanceNews: "财经新闻",
+  subFinanceBrands: "品类行情",
   subFinanceCommunity: "社区讨论",
   subWorld: "国际要闻",
   subOverseasNews: "海外科技",
@@ -86,6 +87,7 @@ const TEXTS_EN: typeof TEXTS_ZH = {
   subCnCommunity: "Chinese Community",
   subOverseasCommunity: "Overseas Community",
   subFinanceNews: "Finance News",
+  subFinanceBrands: "Category Brands",
   subFinanceCommunity: "Community",
   subWorld: "World News",
   subOverseasNews: "Overseas Tech",
@@ -172,7 +174,7 @@ const SUBCATEGORY_ORDER: Partial<Record<Category, string[]>> = {
   // zh mode keeps cn-community (V2EX / LinuxDo); en mode keeps
   // overseas-community (Hacker News / r/stocks).
   tech: ["github-trending", "trending-papers", "x-viral", "ai-news", "cn-community", "overseas-community"],
-  finance: ["news"],
+  finance: ["news", "brands"],
   politics: ["world"],
 };
 
@@ -188,6 +190,7 @@ const SUBCATEGORY_LABELS: Record<string, string> = {
   "x-viral": STR.subXViral,
   "blog-weekly": STR.subBlogWeekly,
   news: STR.subFinanceNews,
+  brands: STR.subFinanceBrands,
   world: STR.subWorld,
 };
 
@@ -204,6 +207,7 @@ const SOURCE_DISPLAY_LIMITS: Record<string, number> = {
   "tech:cn-community": 10,
   "tech:x-viral": 20,
   "tech:trending-papers": 20,
+  "finance:brands": 5,
 };
 
 /**

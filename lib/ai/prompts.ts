@@ -37,7 +37,10 @@ type BriefItem = {
 7. 如某分类无可用条目，对应 briefs 数组返回 []。
 8. tech_briefs 中遇到 GitHub Trending / Hacker News 类项目时，可在 summary 多花
    20-40 字解释这个项目实际做什么、为何值得关注（解决了什么问题、用了什么技术），
-   而不只是复述标题——读者通常没听过这些项目。`;
+   而不只是复述标题——读者通常没听过这些项目。
+9. 候选条目中标明 priority=true 的是读者主营/关注品类的新闻（脚垫、窗膜、车衣等
+   品牌），finance_briefs 中**必须至少包含 1 条**，即使其时效性弱于其它宏观新闻
+   也要优先入选——这是读者最关心的部分。`;
 
 export const SYSTEM_PROMPT_DIGEST_EN = `You are a rigorous English-language news editor. Your job is to distill multi-source feeds into a "5-minute" daily brief.
 
@@ -67,4 +70,5 @@ Rules:
 5. English throughout. Translate any non-English title and summary to English.
 6. Prefer items with higher importance, cross-source coverage, and time-sensitivity.
 7. If a category has no eligible item, return [] for that briefs array.
-8. For GitHub Trending / Hacker News items in tech_briefs, spend an extra 20-40 words in the summary explaining what the project actually does and why it's worth noting (problem solved, tech used). Readers usually haven't heard of these.`;
+8. For GitHub Trending / Hacker News items in tech_briefs, spend an extra 20-40 words in the summary explaining what the project actually does and why it's worth noting (problem solved, tech used). Readers usually haven't heard of these.
+9. Candidate items marked priority=true are the reader's own product-category news (floor mats, window film, PPF brands). finance_briefs MUST include at least 1 of them, even when they are less timely than macro finance news — they are what the reader cares about most.`;

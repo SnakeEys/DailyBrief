@@ -70,7 +70,7 @@
     "type": "rss",
     "url": "https://news.google.com/rss/search?q=%E5%9B%BA%E7%89%B9%E5%BC%82%E8%84%9A%E5%9E%AB&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
-    "subcategory": "news",
+    "subcategory": "brands",
     "lang": "zh",
     "enabled": true,
     "locales": [
@@ -84,7 +84,7 @@
     "type": "rss",
     "url": "https://news.google.com/rss/search?q=3W%E8%84%9A%E5%9E%AB&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
-    "subcategory": "news",
+    "subcategory": "brands",
     "lang": "zh",
     "enabled": true,
     "locales": [
@@ -98,7 +98,7 @@
     "type": "rss",
     "url": "https://news.google.com/rss/search?q=%E9%BE%99%E8%86%9C&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
-    "subcategory": "news",
+    "subcategory": "brands",
     "lang": "zh",
     "enabled": true,
     "locales": [
@@ -112,7 +112,7 @@
     "type": "rss",
     "url": "https://news.google.com/rss/search?q=xpel%E8%86%9C&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
     "category": "finance",
-    "subcategory": "news",
+    "subcategory": "brands",
     "lang": "zh",
     "enabled": true,
     "locales": [
